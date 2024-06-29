@@ -16,6 +16,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { RegisterComponent } from './authentication/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar'; // Example: Import MatToolbarModule
+import { MatIconModule } from '@angular/material/icon'; // Example: Import MatIconModule
+import { MatListModule } from '@angular/material/list'; // Import MatListModule for mat-nav-list
+import { MatFormFieldModule } from '@angular/material/form-field'; // Example: Import MatFormFieldModule
+import { MatMenuModule } from '@angular/material/menu'; 
+import {MatTableModule} from '@angular/material/table';
+import { UploadPopupComponent } from './upload-popup/upload-popup.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -26,7 +37,10 @@ import { MatInputModule } from '@angular/material/input';
     ExaminerDashboardComponent,
     InvigilatorDashboardComponent,
     UploadPaperComponent,
-    ViewPaperComponent
+    ViewPaperComponent,
+    RegisterComponent,
+    UploadPopupComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +50,16 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatMenuModule,
+    MatTableModule
   ],
   providers: [AuthService, PaperService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, UploadPopupComponent]
 })
 export class AppModule { }

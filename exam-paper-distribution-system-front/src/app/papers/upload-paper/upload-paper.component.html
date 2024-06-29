@@ -1,4 +1,10 @@
-<!-- upload-paper.component.html -->
 
-<input type="file" (change)="onFileChanged($event)">
-<button (click)="uploadPaper()">Upload Paper</button>
+<div class="main-content">
+  <!-- Other content -->
+
+  <!-- Upload Paper Button -->
+  <button class="btn btn-primary" (click)="openPopup()">Upload Paper</button>
+
+  <!-- Popup/Modal -->
+  <app-upload-popup *ngIf="showPopup" (close)="closePopup()"></app-upload-popup>
+</div>

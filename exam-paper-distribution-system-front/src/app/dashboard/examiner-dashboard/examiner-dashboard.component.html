@@ -1,1 +1,20 @@
-<p>examiner-dashboard works!</p>
+<!-- examiner-dashboard.component.html -->
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened>
+      <mat-nav-list>
+        <mat-list-item>
+          <a mat-button routerLink="/examiner/upload">Upload Paper</a>
+        </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <span>Examiner Dashboard</span>
+        <button mat-button (click)="logout()">Logout</button>
+      </mat-toolbar>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

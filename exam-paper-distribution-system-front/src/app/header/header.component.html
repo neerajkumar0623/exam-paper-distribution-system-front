@@ -1,0 +1,30 @@
+<!-- header.component.html -->
+<header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <!-- Replace with your logo image or text -->
+        <a routerLink="/">
+          <img src="assets/logo.png" alt="Logo" />
+        </a>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a routerLink="/home" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/about" routerLinkActive="active">About</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/contact" routerLinkActive="active">Contact</a>
+          </li>
+          <li class="nav-item">
+            <form  (ngSubmit)="logout()">
+                <button type="submit" class="btn" >Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  

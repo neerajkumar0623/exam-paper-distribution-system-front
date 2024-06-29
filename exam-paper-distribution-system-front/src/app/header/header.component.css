@@ -1,0 +1,112 @@
+/* header.component.css */
+
+.header {
+    background-color: #4caf50; /* Green background */
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for a lifted effect */
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 50px; /* Adjust size as needed */
+  }
+  
+  .navbar {
+    display: flex;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-item {
+    margin-right: 15px;
+  }
+  
+  .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #388e3c; /* Darker green background */
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-item a:hover,
+  .nav-item a.active {
+    background-color: #1b5e20; /* Dark green on hover or active */
+  }
+  
+  .toggle-menu {
+    display: none; /* Hide by default for larger screens */
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      display: none; /* Hide main nav on smaller screens */
+    }
+  
+    .toggle-menu {
+      display: block; /* Show hamburger menu button */
+      margin-right: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+    }
+  
+    .mobile-menu {
+      display: block; /* Show mobile menu */
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #4caf50;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
+    }
+  
+    .mobile-menu.show {
+      max-height: 300px; /* Adjust as needed */
+    }
+  
+    .mobile-nav-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .mobile-nav-item {
+      padding: 10px;
+      border-bottom: 1px solid #388e3c;
+    }
+  
+    .mobile-nav-item:last-child {
+      border-bottom: none;
+    }
+  
+    .mobile-nav-item a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  

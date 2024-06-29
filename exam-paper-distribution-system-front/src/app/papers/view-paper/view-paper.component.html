@@ -1,1 +1,25 @@
-<p>view-paper works!</p>
+<div class="paper-management">
+    <h2 class="section-title">Manage Examination Papers</h2>
+    <table class="paper-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Uploaded On</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let paper of papers; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ paper.title }}</td>
+          <td>{{ paper.uploadDate }}</td>
+          <td>
+            <button class="btn btn-secondary">View</button>
+            <button class="btn btn-danger" (click)="deletePaper(paper)">Delete</button>
+            <button class="btn" style="background-color: green ; color: white;" (click)="downloadPaper(paper)">Download</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

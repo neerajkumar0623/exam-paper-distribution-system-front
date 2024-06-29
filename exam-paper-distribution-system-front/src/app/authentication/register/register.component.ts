@@ -1,38 +1,37 @@
-// login.component.ts
-
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
- // Adjust path as needed
-
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent {
-  loginForm!: FormGroup;
+export class RegisterComponent implements OnInit {
 
-  credentials = { username: '', password: '' };
+  registerForm!: FormGroup;
+
+  credentials = { username: '', password: '', role:'',};
   public error:any = '';
 
   constructor(private authService: AuthService, private fb: FormBuilder,  private router: Router) { }
   
   ngOnInit(): void {
-    this.loginForm = this.fb.group({
+    this.registerForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      role: ['', Validators.required],
     });
   }
 
-  login() {
-    if (this.loginForm.valid) {
+  signup() {
+    if (this.registerForm.valid) {
       // Perform login logic here
-      this.credentials.username = this.loginForm.value.username;
-      this.credentials.password = this.loginForm.value.password;
-      this.authService.login(this.credentials).subscribe(
+      this.credentials.username = this.registerForm.value.username;
+      this.credentials.password = this.registerForm.value.password;
+      this.credentials.role = this.registerForm.value.role;
+      this.authService.register(this.credentials).subscribe(
         (response:any) => {
           console.log("call", response)
           // Handle successful login (e.g., redirect to dashboard)
@@ -47,4 +46,5 @@ export class LoginComponent {
       // Example: Call authentication service or navigate to another page
     }
    
+
 }
